@@ -26,4 +26,9 @@ CREATE TABLE artist(
 CREATE TABLE tracktoartist(
     id SERIAL,
     track VARCHAR(128),
-    
+    track_id INTEGER REFERENCES track(id) ON DELETE CASCADE,
+    artist VARCHAR(128),
+    artist_id INTEGER REFERENCES artist(id) ON DELETE CASCADE,
+    PRIMARY KEY (id)
+);
+
